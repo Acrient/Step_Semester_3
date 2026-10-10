@@ -30,8 +30,8 @@ public class Problem4_ExaminationQuestionGrader {
         for(int i=0;i<n;i++) {
             String[] p=tokens(sc.nextLine());
             Question q=p[0].equals("MCQ")?new MCQ():p[0].equals("TF")?new TF():new Essay();
-            double points=Double.parseDouble(p[5]);
-            double score=q.grade(p[3],p[4],points);
+            double points=Double.parseDouble(p[4]);
+            double score=q.grade(p[2],p[3],points);
             System.out.printf("%s: %.2f%n",q.type(),score); total+=score;
         }
         System.out.printf("Total Score: %.2f%n",total);
